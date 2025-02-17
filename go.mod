@@ -1,4 +1,4 @@
-module ollama-registry-pull-through-cache
+module github.com/ix64/ollama-registry-proxy
 
 go 1.22
 

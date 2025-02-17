@@ -1,12 +1,13 @@
 package invalidate_manifests_worker
 
 import (
-	"github.com/rs/zerolog/log"
-	"ollama-registry-pull-through-cache/internal/worker/cache_worker"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
+	"github.com/rs/zerolog/log"
 )
 
 func Run(cacheDir string, maxAge time.Duration) {

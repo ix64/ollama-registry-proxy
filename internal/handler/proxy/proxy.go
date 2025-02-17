@@ -1,13 +1,14 @@
 package proxy
 
 import (
-	"github.com/rs/zerolog/log"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"ollama-registry-pull-through-cache/internal/worker/cache_worker"
 	"os"
 	"path"
+
+	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
+	"github.com/rs/zerolog/log"
 )
 
 func Handler(p *httputil.ReverseProxy, cacheDir string, upstream url.URL) func(http.ResponseWriter, *http.Request) {

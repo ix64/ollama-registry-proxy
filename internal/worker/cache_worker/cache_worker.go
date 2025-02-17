@@ -4,7 +4,6 @@ import (
 	"crypto/sha256"
 	"errors"
 	"fmt"
-	"github.com/rs/zerolog/log"
 	"io"
 	"net/http"
 	"net/url"
@@ -13,6 +12,8 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/rs/zerolog/log"
 )
 
 func QueueFileForDownload(filePath string) {
@@ -31,6 +32,10 @@ func Run(cacheDir string, originUrl *url.URL) {
 	for {
 		// Wall all files recursively in cacheDir
 		err := filepath.Walk(cacheDir, func(fPath string, info os.FileInfo, err error) error {
+			if err != nil {
+				return err
+			}
+
 			// Check if file is a .todo file
 			if filepath.Ext(fPath) != ".todo" {
 				return nil
