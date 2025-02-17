@@ -7,8 +7,9 @@ import (
 	"os"
 	"path"
 
-	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
 	"github.com/rs/zerolog/log"
+
+	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
 )
 
 func Handler(p *httputil.ReverseProxy, cacheDir string, upstream url.URL) func(http.ResponseWriter, *http.Request) {

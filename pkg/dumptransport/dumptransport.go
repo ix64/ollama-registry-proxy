@@ -1,12 +1,12 @@
 package dumptransport
 
 import (
-	"github.com/rs/zerolog/log"
-
-	"moul.io/http2curl"
 	"net/http"
 	"net/http/httputil"
 	"time"
+
+	"github.com/rs/zerolog/log"
+	"moul.io/http2curl"
 )
 
 type Transport struct {

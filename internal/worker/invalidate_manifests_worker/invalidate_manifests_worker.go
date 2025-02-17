@@ -6,8 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
 	"github.com/rs/zerolog/log"
+
+	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
 )
 
 func Run(cacheDir string, maxAge time.Duration) {

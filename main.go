@@ -2,18 +2,20 @@ package main
 
 import (
 	"fmt"
-	"github.com/alecthomas/kong"
-	"github.com/ix64/ollama-registry-proxy/internal/handler/proxy"
-	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
-	"github.com/ix64/ollama-registry-proxy/internal/worker/invalidate_manifests_worker"
-	"github.com/ix64/ollama-registry-proxy/pkg/dumptransport"
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/log"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
 	"os"
 	"time"
+
+	"github.com/alecthomas/kong"
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
+
+	"github.com/ix64/ollama-registry-proxy/internal/handler/proxy"
+	"github.com/ix64/ollama-registry-proxy/internal/worker/cache_worker"
+	"github.com/ix64/ollama-registry-proxy/internal/worker/invalidate_manifests_worker"
+	"github.com/ix64/ollama-registry-proxy/pkg/dumptransport"
 )
 
 var cli struct {
